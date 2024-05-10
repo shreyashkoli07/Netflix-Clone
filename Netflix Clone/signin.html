@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5000; URL=http://127.0.0.1:5500/signin.html">
+    <title>Sing In</title>
+    <link rel="icon" href="netflix.png" type="image/x-icon">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+
+        }
+        body{
+            
+           
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(bg-1.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: black;
+            filter: brightness(1.7);
+
+
+        }
+        .logo img{
+         width: 200px;
+         padding: 10px 30px;
+    cursor: pointer;
+
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .wrapper{
+            width: 420px;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            border-radius: 10px;
+             padding: 30px 40px;
+             margin: 30px 0px;
+           
+
+        }
+        .wrapper h1{
+            font-size: 36px;
+            text-align: center;
+        }
+        .input-box{
+            width: 100%;
+            height: 50px;
+           
+            margin: 30px 0;
+        }
+
+        .input-box input{
+            height: 100%;
+            width: 100%;
+            background-color:rgb(43, 43, 43);
+            outline: none;
+            border: none;
+            border: 1px solid black;
+            font-size: 16px;
+            color: #777;
+            padding: 20px 45px 20px 20px;
+            border-radius: 5px;
+        }
+        .input-box input::placeholder{
+            color: #777;
+
+            
+        }
+        .remember-forgot{
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            /* margin: -15px 0 15px; */
+       
+            
+        }
+      .remember-forgot label input{
+        accent-color: #777;
+        margin-right: 3px;
+    
+      }
+
+      .remember-forgot a{
+        color: #777;
+        text-decoration: none;
+      }
+      
+      .remember-forgot a:hover{
+        text-decoration: underline;
+      }
+      .wrapper .btn{
+        width: 100%;
+        height: 45px;
+        background: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+        color:white;
+        font-weight: 600;
+        background-color: red;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .wrapper  .register-link{
+        font-size: 15px;
+        
+        margin-top: 50px;
+      }
+
+      .register-link p a{
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .register-link p {
+        color: #777;
+      }
+      .register-link p a:hover{
+        text-decoration: underline;
+      }
+      .captcha{
+        margin-top: 20px;
+        color: 16px;
+      }
+      #btn{
+          outline: 0;
+          border: 0;
+          padding: 0;
+          background: none;
+          color: blue;
+      }
+      
+    .captcha a{
+        
+text-decoration: none;
+    }
+    .captcha a:hover{
+        text-decoration: underline;
+    }
+    #btn:hover{
+        text-decoration: underline;
+    }
+    .captcha #p1{
+        transition: all,0.s,ease;
+    }
+    .footer{
+        background-color: rgba(0, 0, 0, 0.75);
+     width: 100vw;
+     max-height:fit-content;
+     padding: 50px 15% 10px;
+    color: gray;
+    font-size: 12px;
+    }
+    
+    .row {
+    display: flex;
+    gap: 100px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.row li {
+    list-style-type: none;
+}
+.row a{
+    text-decoration: none;
+    color: #777;
+}
+.row a:hover{
+    text-decoration:underline;
+}
+.footer h3 {
+    font-size: 14px;
+    color: #777;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.footer span:hover {
+    text-decoration: underline;
+}
+
+.foot-btn{
+    margin-top: 60px;
+    margin-bottom: 10px;
+  
+
+}
+.foot-btn select{
+    background-color: black;
+    color: #777;
+    padding: 10px 30px;
+    border: 1px solid white;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+  <img src="logo.png" alt="">
+    </div>
+
+  <div class="main">
+    <div class="wrapper">
+        <form action="" name="Sign-form" onsubmit="return onSubmit()" method="post">
+            <legend style="font-size: 24px;">Sign In</legend>
+            <div class="input-box">
+                <input type="text" type="tel" placeholder="Email or phone number"  name="email" >
+                <p id="p2"></p>
+
+            </div>
+            <div class="input-box">
+                <input type="password"   placeholder="Password"  name="password" >
+                <p id="p3"></p>
+
+            </div>
+            <div class="remember-forgot">
+                <label for=""><input type="checkbox" name="" id="">Remember me </label>
+                <a href="">Need help?</a>
+            </div>
+            <button type="submit" class="btn"> Sign In</button>
+            <div class="register-link">
+                <p>New to Netflix?<a href="http://127.0.0.1:5500/index.html">Sign up now.</a></p>
+            </div>
+            <div class="captcha"> 
+                <p><span>This page is protected by Google reCAPTCHA to ensure you're not a bot.</span>&nbsp;<button id="btn" onclick="onClick()">Learn more.</button></p>
+                <br><br>
+                <p id="p1"></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="footer">
+    <h2>Questions? Call <span>000-800-919-1694</span> </h2>
+
+    <div class="row">
+        <div class="col-1">
+            <ul>
+            <li><a href="">FAQ</a></li>
+           <li><a href="">Cookie Preferences</a></li>
+           <ul>
+        </div>
+        <div class="col-2">
+            <ul>
+            <li><a href="">Help Centre</a></li>
+           <li> <a href="">Corporate Information</a></li>
+        </ul>
+        </div>
+        <div class="col-3">
+            <ul>
+           <li> <a href="">Terms of Use</a></li>
+         
+        </div>
+        <div class="col-4">
+            <ul>
+            <li><a href="">Privacy</a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="foot-btn">
+        <select name="language" id="languageSelect" class="language_drop_down">
+            <option value="english" selected>English</option>
+            <option value="hindi">Hindi</option>
+        </select>
+
+    </div>
+
+</div>
+
+    <script src="index.js"></script>
+    
+
+</body>
+</html>
